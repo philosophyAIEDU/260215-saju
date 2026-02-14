@@ -10,13 +10,13 @@ export default function MonthlyFortune({ monthly }: MonthlyFortuneProps) {
       {monthly.map((m) => (
         <div
           key={m.month}
-          className="bg-white/5 rounded-lg p-3 border border-white/5 hover:border-gold-500/30 transition-colors"
+          className="bg-surface-50 rounded-lg p-3 border border-surface-300 hover:border-primary-300 transition-colors"
         >
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-serif text-gold-400">{m.month}월</span>
+            <span className="text-sm font-serif text-primary-600">{m.month}월</span>
             <span className="text-sm tracking-wider">{m.rating}</span>
           </div>
-          <p className="text-xs text-cream/70 leading-relaxed">{m.summary}</p>
+          <p className="text-xs text-ink-600 leading-relaxed">{m.summary}</p>
         </div>
       ))}
     </div>

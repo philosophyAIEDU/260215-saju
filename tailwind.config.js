@@ -7,18 +7,37 @@ export default {
   theme: {
     extend: {
       colors: {
-        gold: {
-          400: '#f0c674',
-          500: '#d4a843',
-          600: '#b8922e',
+        primary: {
+          50: '#fdf8f0',
+          100: '#f9edda',
+          200: '#f0d5a8',
+          300: '#e6b76e',
+          400: '#d4a843',
+          500: '#b8922e',
+          600: '#9a7624',
+          700: '#7a5d1c',
         },
-        cream: '#f5f0e8',
-        darkbg: {
-          900: '#0a0a1a',
-          800: '#121230',
-          700: '#1a1a3e',
+        surface: {
+          50: '#fefdfb',
+          100: '#fdf9f3',
+          200: '#f8f1e6',
+          300: '#f0e6d4',
+          400: '#e5d5bd',
         },
-        jade: '#2d8b70',
+        ink: {
+          900: '#2c1810',
+          800: '#3d2b1f',
+          700: '#5a4234',
+          600: '#7a6050',
+          500: '#9a8070',
+          400: '#b8a898',
+          300: '#d4c8b8',
+        },
+        accent: {
+          red: '#c0392b',
+          jade: '#1a8a6a',
+          blue: '#2e6da4',
+        },
       },
       fontFamily: {
         serif: ['"Noto Serif KR"', 'Georgia', 'serif'],
@@ -28,8 +47,6 @@ export default {
         'spin-slow': 'spin 3s linear infinite',
         'fade-in': 'fadeIn 0.6s ease-out forwards',
         'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
-        'count-up': 'countUp 1.5s ease-out forwards',
-        'bar-fill': 'barFill 1s ease-out forwards',
       },
       keyframes: {
         fadeIn: {
@@ -39,14 +56,6 @@ export default {
         fadeInUp: {
           '0%': { opacity: '0', transform: 'translateY(24px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        countUp: {
-          '0%': { strokeDashoffset: '283' },
-          '100%': { strokeDashoffset: 'var(--target-offset)' },
-        },
-        barFill: {
-          '0%': { width: '0%' },
-          '100%': { width: 'var(--target-width)' },
         },
       },
     },

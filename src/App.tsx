@@ -72,7 +72,7 @@ export default function App() {
           <ErrorMessage message={error} onRetry={handleRetry} />
           <button
             onClick={handleReset}
-            className="text-sm text-cream/50 hover:text-cream/70 transition-colors"
+            className="text-sm text-ink-500 hover:text-ink-700 transition-colors"
           >
             입력 화면으로 돌아가기
           </button>

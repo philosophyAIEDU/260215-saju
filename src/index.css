@@ -16,19 +16,17 @@
     margin: 0;
     padding: 0;
     font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(180deg, #0a0a1a 0%, #121230 50%, #1a1a3e 100%);
+    background: linear-gradient(180deg, #fefdfb 0%, #fdf9f3 40%, #f8f1e6 100%);
     background-attachment: fixed;
-    color: #f5f0e8;
+    color: #3d2b1f;
     min-height: 100vh;
   }
 
-  /* 셀렉트 드롭다운 스타일 */
   select option {
-    background-color: #121230;
-    color: #f5f0e8;
+    background-color: #fefdfb;
+    color: #3d2b1f;
   }
 
-  /* 스크롤바 커스텀 */
   ::-webkit-scrollbar {
     width: 6px;
   }
@@ -36,15 +34,14 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(212, 168, 67, 0.2);
+    background: rgba(180, 140, 60, 0.25);
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(212, 168, 67, 0.4);
+    background: rgba(180, 140, 60, 0.45);
   }
 }
 
-/* 배경 데코레이션 패턴 */
 body::before {
   content: '';
   position: fixed;
@@ -53,8 +50,8 @@ body::before {
   right: 0;
   bottom: 0;
   background:
-    radial-gradient(ellipse at 20% 20%, rgba(212, 168, 67, 0.03) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(45, 139, 112, 0.03) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 10%, rgba(212, 168, 67, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(26, 138, 106, 0.04) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }

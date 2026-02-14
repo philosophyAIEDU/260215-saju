@@ -20,7 +20,6 @@ export default function ScoreCircle({ score, size = 80, label }: ScoreCircleProp
     function animate(now: number) {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      // easeOutCubic
       const eased = 1 - Math.pow(1 - progress, 3);
       setAnimatedScore(Math.round(eased * score));
       if (progress < 1) {
@@ -33,9 +32,9 @@ export default function ScoreCircle({ score, size = 80, label }: ScoreCircleProp
   }, [score]);
 
   const getScoreColor = (s: number) => {
-    if (s >= 80) return '#d4a843';
-    if (s >= 60) return '#2d8b70';
-    return '#8b4513';
+    if (s >= 80) return '#b8922e';
+    if (s >= 60) return '#1a8a6a';
+    return '#c0392b';
   };
 
   const color = getScoreColor(score);
@@ -49,7 +48,7 @@ export default function ScoreCircle({ score, size = 80, label }: ScoreCircleProp
             cy={size / 2}
             r={radius}
             fill="none"
-            stroke="rgba(255,255,255,0.08)"
+            stroke="rgba(0,0,0,0.06)"
             strokeWidth="6"
           />
           <circle
@@ -67,10 +66,10 @@ export default function ScoreCircle({ score, size = 80, label }: ScoreCircleProp
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <span className="text-xl font-bold" style={{ color }}>{animatedScore}</span>
-          <span className="text-[10px] text-cream/50">/ 100</span>
+          <span className="text-[10px] text-ink-400">/ 100</span>
         </div>
       </div>
-      {label && <span className="text-xs text-cream/60 mt-1">{label}</span>}
+      {label && <span className="text-xs text-ink-500 mt-1">{label}</span>}
     </div>
   );
 }

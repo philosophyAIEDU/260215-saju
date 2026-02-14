@@ -15,14 +15,14 @@ function PillarDisplay({ label, hanja, stem, branch, korean }: {
 }) {
   return (
     <div className="flex flex-col items-center gap-1">
-      <span className="text-[10px] text-cream/40">{label}</span>
-      <span className="text-[10px] text-gold-400/60">{hanja}</span>
-      <div className="flex flex-col items-center bg-white/5 rounded-lg px-3 py-2 border border-gold-500/20">
-        <span className="text-xl font-serif text-gold-400">{stem}</span>
-        <div className="w-6 h-px bg-gold-500/30 my-1" />
-        <span className="text-xl font-serif text-cream">{branch}</span>
+      <span className="text-[10px] text-ink-400">{label}</span>
+      <span className="text-[10px] text-primary-400">{hanja}</span>
+      <div className="flex flex-col items-center bg-white rounded-lg px-3 py-2 border border-primary-200 shadow-sm">
+        <span className="text-xl font-serif text-primary-600">{stem}</span>
+        <div className="w-6 h-px bg-primary-300 my-1" />
+        <span className="text-xl font-serif text-ink-800">{branch}</span>
       </div>
-      <span className="text-xs text-cream/60">{korean}</span>
+      <span className="text-xs text-ink-500">{korean}</span>
     </div>
   );
 }
@@ -33,20 +33,18 @@ export default function SajuSummaryCard({ saju, birthInfo }: SajuSummaryCardProp
   const nameDisplay = birthInfo.name.trim() || '미입력';
 
   return (
-    <div className="bg-white/[0.03] backdrop-blur-sm border border-gold-500/20 rounded-2xl p-6 space-y-6 animate-fade-in">
-      {/* 사용자 정보 */}
+    <div className="bg-white/70 backdrop-blur-sm border border-primary-200 rounded-2xl p-6 space-y-6 animate-fade-in shadow-sm">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-serif text-gold-400">
+        <h2 className="text-2xl font-serif text-primary-700">
           {nameDisplay}님의 사주팔자
         </h2>
-        <p className="text-sm text-cream/50">
+        <p className="text-sm text-ink-500">
           {calendarText} {birthInfo.year}년 {birthInfo.month}월 {birthInfo.day}일
           {birthInfo.birthTime ? ` ${birthInfo.birthTime}` : ' (시간 미상)'}
           {' · '}{genderText}
         </p>
       </div>
 
-      {/* 사주 기둥 */}
       <div className="flex justify-center gap-4 sm:gap-6">
         {saju.timePillar && (
           <PillarDisplay
@@ -80,29 +78,26 @@ export default function SajuSummaryCard({ saju, birthInfo }: SajuSummaryCardProp
         />
       </div>
 
-      {/* 일간, 오행 강약 */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
-        <div className="bg-white/5 rounded-lg p-3">
-          <span className="text-[10px] text-cream/40 block">일간(日干)</span>
-          <span className="text-lg font-serif text-gold-400">{saju.dayMaster}</span>
+        <div className="bg-primary-50 rounded-lg p-3 border border-primary-100">
+          <span className="text-[10px] text-ink-400 block">일간(日干)</span>
+          <span className="text-lg font-serif text-primary-600">{saju.dayMaster}</span>
         </div>
-        <div className="bg-white/5 rounded-lg p-3">
-          <span className="text-[10px] text-cream/40 block">강한 오행</span>
-          <span className="text-lg font-serif text-green-400">{saju.dominantElement}</span>
+        <div className="bg-green-50 rounded-lg p-3 border border-green-100">
+          <span className="text-[10px] text-ink-400 block">강한 오행</span>
+          <span className="text-lg font-serif text-green-700">{saju.dominantElement}</span>
         </div>
-        <div className="bg-white/5 rounded-lg p-3">
-          <span className="text-[10px] text-cream/40 block">약한 오행</span>
-          <span className="text-lg font-serif text-red-400">{saju.weakElement}</span>
+        <div className="bg-red-50 rounded-lg p-3 border border-red-100">
+          <span className="text-[10px] text-ink-400 block">약한 오행</span>
+          <span className="text-lg font-serif text-red-700">{saju.weakElement}</span>
         </div>
       </div>
 
-      {/* 성격 요약 */}
-      <div className="bg-white/5 rounded-lg p-4">
-        <span className="text-xs text-gold-400/70 block mb-2">성격 분석</span>
-        <p className="text-sm text-cream/80 leading-relaxed">{saju.personality}</p>
+      <div className="bg-surface-100 rounded-lg p-4 border border-surface-300">
+        <span className="text-xs text-primary-500 block mb-2">성격 분석</span>
+        <p className="text-sm text-ink-700 leading-relaxed">{saju.personality}</p>
       </div>
 
-      {/* 오행 차트 */}
       <FiveElementsChart elements={saju.fiveElements} />
     </div>
   );
